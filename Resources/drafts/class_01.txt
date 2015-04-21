@@ -1,0 +1,265 @@
+O que é PHP?
+
+O PHP (um acrônimo recursivo para PHP: Hypertext Preprocessor) é uma linguagem de script open source de uso geral, utilizada por centenas de milhares de sites e aplicações no mundo, e especialmente adequada para o desenvolvimento web e que pode ser embutida dentro do HTML.
+
+(adaptado de: php.net) [http://php.net/manual/pt_BR/intro-whatis.php]
+
+Exemplo:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo</title>
+    </head>
+    <body>
+
+        <?php
+            echo "Olá, eu sou um script PHP!";
+        ?>
+
+    </body>
+</html>
+
+----------------------------------------
+
+História do PHP
+
+- Criado em 1994 por Rasmus Lerdof
+	"Personal Home Page Tools"
+
+- 1996: PHP/FI para PHP 2.0
+- 1998: Em maio, cerca de 60.000 domínios utilizavam PHP (1% dos domínios da época)
+	Em junho, Rasmus juntou-se à Andi Gutmans e Zeev Suraski e lançaram o PHP 3.0
+- 2000: PHP 4.0 é lançado com a "Zend Engine" totalmente reescrito
+- 2004: PHP 5.0 é lançado com a "Zend Engine 2.0"
+
+"Embora seja apenas uma estimativa baseada sobre estatísticas de anos anteriores, é seguro presumir que o PHP está agora instalado em centenas de milhões de domínios em todo mundo." (php.net)
+
+[http://php.net/manual/pt_BR/history.php.php]
+
+------------------------------------------
+
+Vantagens do PHP
+
+- Fácil aprendizado
+- Acesso a dados
+- Multi-plataforma
+- Código-fonte aberto
+
+Desvantagens do PHP
+
+- Compatibilidade entre versões
+- Documentação incompleta
+- Segurança
+- Aplicativos de servidor
+
+[http://www.fuctura.com.br/2013/01/vantagens-e-desvantagens-do-php]
+
+----------------------------------------------
+
+Configuração do Ambiente de Desenvolvimento
+
+- Stack LAMP ou WAMP (XAMPP)
+
+
+
+[https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-14-04-pt]
+
+----------------------------------------------
+
+Estrutura de um arquivo PHP
+
+<?php
+    phpinfo();
+?>
+
+----------------------------------------------
+
+Codificando em PHP
+
+<?php 
+    echo "Hello world!";
+    echo "<br />"; 
+    echo "PHP Rocks \o/";
+?>
+
+- A extensão do arquivo
+- A pasta de publicação do apache (htdocs)
+- Acessando localmente a publicação: http://localhost
+
+----------------------------------------------
+
+Variáveis
+
+Variáveis são "contêineres" para armazenar informações
+
+
+Criando (declarando) variáveis em PHP
+
+- Começa com $, segido do nome da variável
+- O nome deve iniciar com uma letra ou underscore
+- O nome não pode iniciar com número
+- O nome só pode conter caracteres alfanuméricos e underscore (A-z, 0-9, e _ )
+- Nomes de variáveis são case-sensitive ($idade e $Idade e $IDADE são variáveis diferentes) 
+
+Exemplos:
+
+$nomeUsuario
+$nome_usuario
+$_nomeUsuario
+$_Nome_Usuario
+
+Exemplo:
+
+<?php
+    $txt = "Hello world!";
+    $x = 5;
+    $y = 10.5;
+?>
+
+[http://www.w3schools.com/php/php_variables.asp]
+
+----------------------------------------------
+
+Tipos de Dados
+
+- String
+- Integer
+- Float (double)
+- Boolean
+- Array
+- Object
+- NULL
+- Resource
+
+----------------------
+* PHP String (literal)
+
+- Uma sequência de caracteres
+- O texto pode estar entre aspas simples ou duplas
+
+Exemplo:
+
+<?php 
+    $x = "Hello world!";
+    $y = 'Hello world!';
+
+    echo $x;
+    echo "<br>"; 
+    echo $y;
+?>
+
+----------------------
+* PHP Integer
+
+É um número completo, sem decimais. Seu valor pode estar compreendido entre -2,147,483,648 e +2,147,483,647
+
+Regras:
+
+- Deve conter pelo menos um ndígido (0-9)
+- Não pode ter vírgulas nem espaços
+- Não pode conter casas decimais
+- Pode ser positivo ou negativo
+- Pode ser representado por valores nas bases decimal, hexadecimal (0x) e octal (0)
+
+Exemplo:
+
+<?php 
+    $x = 5985;
+    var_dump($x);
+?>
+
+----------------------
+* PHP Float
+
+Um float e um número decimal.
+
+Exemplo:
+
+<?php 
+    $x = 10.365;
+    var_dump($x);
+?>
+
+----------------------
+* PHP Boolean
+
+Um booleano é um valor que representa os estados de verdadeiro (TRUE) e falso (FALSE)
+
+Geralmente são usados em testes condicionais.
+
+Exemplo:
+
+$x = true;
+$y = false;
+
+----------------------
+* PHP Array
+
+Um array armazena múltiplos valores na mesma variável.
+
+Exemplo:
+
+<?php 
+    $carros = array("Gol","Pálio","Celta");
+    var_dump($carros);
+?>
+
+----------------------
+* PHP Object
+
+Um objeto é um tipo de estrutura que armena dados complexos. Possui dados e informações de como processar esses dados.
+
+Primeiro a classe do objeto deve ser declarada.
+
+Exemplo:
+
+<?php
+class Carro {
+    function Carro() {
+        $this->modelo = "Pálio";
+    }
+}
+
+$meuCarro = new Carro();
+
+echo $meuCarro->modelo;
+?>
+
+----------------------
+* PHP NULL
+
+Uma variável do tipo NULL não possui valor atribuído à ela.
+
+Exemplo:
+
+<?php
+    $x = "Hello world!";
+    $x = null;
+    var_dump($x);
+?>
+
+----------------------
+* PHP Resource
+
+É o armazenamento de referências à funções e recursos externos ao PHP.
+
+Um exemplo comum é uma chamada ao banco de dados.
+
+[http://www.w3schools.com/php/php_datatypes.asp]
+
+----------------------------------------------
+
+Constantes
+
+Constantes são como variáveis exceto que uma vez definidas, seu valor não pode ser alterado ou indefinido.
+
+Sintaxe:
+
+define(nome, valor, case-insensitive)
+
+- nome: especifica o nome da constante
+- valor: especifica o valor da constante
+- case-insensitive: especifica se o nome da constante é insensível ao caso. O padrão é falso.
+
+
